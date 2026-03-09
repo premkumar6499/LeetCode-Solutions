@@ -1,0 +1,16 @@
+/**
+ * @param {string} val
+ * @return {Object}
+ */
+var expect = function(val) {
+    return {
+        toBe: (compareVal) => {
+            if (val === compareVal) return true;
+            throw new Error("Not Equal");
+        },
+        notToBe: (compareVal) => {
+            if (val !== compareVal) return true;
+            throw new Error("Equal");
+        }
+    };
+};
